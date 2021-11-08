@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./firebase-config";
+import React, { Fragment } from 'react';
+//import { createUserWithEmailAndPassword } from 'firebase/auth';
+//import { auth } from '../FirebaseConfig';
 // import app from '../FirebaseConfig'
 
 function SignUp () {
@@ -24,7 +24,7 @@ function SignUp () {
                  className= 'passwordInput'></input>
                  <button 
                  type= 'submit'
-                 className= 'buttonForm'></button>
+                 className= 'buttonForm'>Registrarse</button>
              </form>
             </div>
         </Fragment>
