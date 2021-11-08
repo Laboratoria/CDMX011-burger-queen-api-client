@@ -18,13 +18,14 @@ class Task extends Component {
               {task.description} - 
               {task.done} - 
               {task.id}
-              <input type="checkbox"/>
-              <button style = {btnDelet}>X</button>
+              <input type="checkbox" onChange={this.props.checkDone.bind(this, task.id)}/>
+              <button style = {btnDelet} onClick={this.props.deleteTask.bind(this, task.id)}>
+                X</button>
             </p>)
     }
 }
 
-Task.propTypes = {
+Task.propTypes = { // Validaciones
     task: PropTypes.object.isRequired
 }
 
