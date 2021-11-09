@@ -22,6 +22,7 @@ function LogIn (){
 
     return(
         <Fragment>
+            
             <h1>Iniciar sesion</h1>
             <form>
                 <label> Correo Electrónico: </label>
