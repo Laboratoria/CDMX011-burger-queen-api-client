@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import logo from '../Logo.svg'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../FirebaseConfig';
 
@@ -22,7 +23,7 @@ function LogIn (){
 
     return(
         <Fragment>
-            
+            <img src={logo} className="App-logo" alt="logo" />
             <h1>Iniciar sesion</h1>
             <form>
                 <label> Correo Electrónico: </label>
