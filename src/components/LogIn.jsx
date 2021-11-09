@@ -1,7 +1,9 @@
 import React, { Fragment, useState } from 'react';
-import logo from '../Logo.svg'
+import logo from '../assets/Burger-Queen-logo.png';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../FirebaseConfig';
+import { Link } from 'react-router-dom';
+import './style/Style.css';
 
 function LogIn (){
     const [loginMail, setLoginMail] = useState('');
@@ -23,14 +25,14 @@ function LogIn (){
 
     return(
         <Fragment>
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1>Iniciar sesion</h1>
+          <main>
+          <div className= 'container'><img src={logo} className="App-logo" alt="logo" /></div>
             <form>
+                <h1 className ='h1Form'>Iniciar sesión</h1>
                 <label> Correo Electrónico: </label>
                 <input
                  type='email'
                  placeholder='Ingresa tu email'
-                 className= 'formInput'
                  onChange={(event) => {
                     setLoginMail(event.target.value);
                   }}></input>
@@ -38,7 +40,6 @@ function LogIn (){
                  <input
                  type='password'
                  placeholder='Ingrese su contraseña'
-                 className= 'formInput'
                  onChange={(event) => {
                     setLoginPassword(event.target.value);
                   }}></input>
@@ -47,6 +48,9 @@ function LogIn (){
                  type='submit'
                  onClick={logInPromise}>Enviar</button>
             </form>
+            
+          </main>
+          <div className='link'><Link to = '/register' className='changeRoute'>Registrate</Link></div>
         </Fragment>    
     )
 }

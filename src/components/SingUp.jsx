@@ -1,6 +1,9 @@
 import React, { Fragment, useState } from 'react';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import logo from '../assets/Burger-Queen-logo.png';
 import { auth } from '../FirebaseConfig';
+import { Link } from 'react-router-dom';
+import './style/Style.css';
 
 function SignUp () {
 
@@ -28,15 +31,15 @@ function SignUp () {
     
     return (
         <Fragment>
-            <div className = 'signUp'>
-             <h1>Regístrate</h1>
-             <form className ='signUpForm' onSubmit={signPromise}>
+          <main>
+             <div className= 'container'><img src={logo} className="App-logo" alt="logo" /></div>
+             <form onSubmit={signPromise}>
+                <h1 className ='h1Form'>Regístrate</h1>
                 <label> Nombre: </label>
                  <input
                  type='text'
                  placeholder='Ingresa tu numbre'
                  id= 'formUsername'
-                 className= 'formInput'
                  onChange={(event) => {
                     setsignUsername(event.target.value);
                   }}></input>
@@ -45,7 +48,6 @@ function SignUp () {
                  type='email'
                  placeholder='Ingresa tu email'
                  id= 'formEmail'
-                 className= 'formInput'
                  onChange={(event) => {
                     setsignMail(event.target.value);
                   }}></input>
@@ -60,9 +62,10 @@ function SignUp () {
                   }}></input>
                  <button 
                  className= 'buttonForm'
-                 type='submit'>Registrarse</button>
+                 type='submit'>Registrarse</button>                 
              </form>
-            </div>
+          </main>
+          <div className='link'><Link to = '/' className='changeRoute'> Inicia Sesión </Link> </div>
         </Fragment>
     )
 }
