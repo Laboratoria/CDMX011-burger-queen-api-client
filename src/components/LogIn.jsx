@@ -4,6 +4,8 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../FirebaseConfig';
 import { Link } from 'react-router-dom';
 import './style/Style.css';
+import Swal from 'sweetalert2';
+// import Errors from './errors';
 
 function LogIn (){
     const [loginMail, setLoginMail] = useState('');
@@ -18,8 +20,9 @@ function LogIn (){
                 loginPassword
             );
             console.log(user);
+              
         }catch(error){
-            console.log(error.message);
+            Swal.fire(error.code);
         }
     }
 

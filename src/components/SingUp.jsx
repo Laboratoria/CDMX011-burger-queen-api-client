@@ -4,6 +4,7 @@ import logo from '../assets/Burger-Queen-logo.png';
 import { auth } from '../FirebaseConfig';
 import { Link } from 'react-router-dom';
 import './style/Style.css';
+import Swal from 'sweetalert2';
 
 function SignUp () {
 
@@ -25,7 +26,7 @@ function SignUp () {
             })
             console.log(user);
         } catch (error){
-            console.log(error.message)
+            Swal.fire(error.code)
         }
     }
     

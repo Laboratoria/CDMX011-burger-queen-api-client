@@ -19,7 +19,7 @@
 main{
     display: flex;
     justify-content: space-around;
-    margin-top: 7vw;
+    margin-top: 7vw; 
 }
 
 form {
@@ -36,10 +36,13 @@ form {
         @include fontStyle(2.5vw, normal);
         @include formStyle(#F2E088);
         margin: 2vw;
+        padding: 1.5vmin;
     }
     button{
         @include fontStyle(2vw, bold);
-        @include formStyle(#F89C2D)
+        @include formStyle(#F89C2D);
+        cursor: pointer;
+        padding: 1.5vmin !important;
     }   
 }
 

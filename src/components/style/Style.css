@@ -44,6 +44,7 @@ form input {
   border-radius: 50px;
   border: none;
   margin: 2vw;
+  padding: 1.5vmin;
 }
 
 form button {
@@ -53,6 +54,8 @@ form button {
   background-color: #F89C2D;
   border-radius: 50px;
   border: none;
+  cursor: pointer;
+  padding: 1.5vmin !important;
 }
 
 .link {
