@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import logo from '../assets/Burger-Queen-logo.png';
 import { auth } from '../FirebaseConfig';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './style/Style.css';
 import Swal from 'sweetalert2';
 
@@ -11,6 +11,7 @@ function SignUp () {
     const [signMail, setsignMail] = useState('');
     const [signPassword, setsignPassword] = useState('');
     const [signUsername, setsignUsername] = useState('');
+    const navigate = useNavigate();
     
     const signPromise = async (event) => {  
         event.preventDefault();      
@@ -20,11 +21,13 @@ function SignUp () {
                 signMail,
                 signPassword
             );
-            
             await updateProfile(auth.currentUser,{
                 displayName: signUsername
             })
             console.log(user);
+            if(user){
+                navigate("/menu");
+             }
         } catch (error){
             Swal.fire(error.code)
         }

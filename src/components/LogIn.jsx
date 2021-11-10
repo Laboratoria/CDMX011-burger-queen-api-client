@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState} from 'react';
 import logo from '../assets/Burger-Queen-logo.png';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../FirebaseConfig';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import './style/Style.css';
 import Swal from 'sweetalert2';
 // import Errors from './errors';
@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 function LogIn (){
     const [loginMail, setLoginMail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
+    const navigate = useNavigate();
 
     const logInPromise = async (event) =>{
         event.preventDefault();
@@ -20,6 +21,9 @@ function LogIn (){
                 loginPassword
             );
             console.log(user);
+            if(user){
+               navigate("/menu");
+            }
               
         }catch(error){
             Swal.fire(error.code);
