@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../FirebaseConfig';
 import { Link , useNavigate } from 'react-router-dom';
 import './style/Style.css';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 // import Errors from './errors';
 
 function LogIn (){
@@ -26,7 +26,8 @@ function LogIn (){
             }
               
         }catch(error){
-            Swal.fire(error.code);
+            // Swal.fire
+            console.log(error.code);
         }
     }
 
@@ -36,10 +37,12 @@ function LogIn (){
           <div className= 'container'><img src={logo} className="App-logo" alt="logo" /></div>
             <form>
                 <h1 className ='h1Form'>Iniciar sesión</h1>
-                <label> Correo Electrónico: </label>
+                <label for= 'username-mail'> Correo Electrónico: </label>
                 <input
+                 id ='username-mail'
                  type='email'
-                 placeholder='Ingresa tu email'
+                 placeholder='ejemplo@ejemplo.com'
+                 aria-label="mail"
                  onChange={(event) => {
                     setLoginMail(event.target.value);
                   }}></input>

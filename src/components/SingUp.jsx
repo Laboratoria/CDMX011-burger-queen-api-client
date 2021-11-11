@@ -4,7 +4,7 @@ import logo from '../assets/Burger-Queen-logo.png';
 import { auth } from '../FirebaseConfig';
 import { Link, useNavigate } from 'react-router-dom';
 import './style/Style.css';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 function SignUp () {
 
@@ -26,10 +26,11 @@ function SignUp () {
             })
             console.log(user);
             if(user){
-                navigate("/menu");
-             }
+                 navigate("/menu");
+            }
         } catch (error){
-            Swal.fire(error.code)
+            // Swal.fire
+            console.log(error.code);
         }
     }
     
@@ -42,7 +43,7 @@ function SignUp () {
                 <label> Nombre: </label>
                  <input
                  type='text'
-                 placeholder='Ingresa tu numbre'
+                 placeholder='Ejemplo'
                  id= 'formUsername'
                  onChange={(event) => {
                     setsignUsername(event.target.value);
@@ -50,7 +51,7 @@ function SignUp () {
                  <label> Correo Electrónico: </label>
                  <input
                  type='email'
-                 placeholder='Ingresa tu email'
+                 placeholder='ejemplo@ejemplo.com'
                  id= 'formEmail'
                  onChange={(event) => {
                     setsignMail(event.target.value);
@@ -58,7 +59,7 @@ function SignUp () {
                  <label> Contraseña: </label>
                  <input
                  type='password'
-                 placeholder='Ingresa una contraseña válida'
+                 placeholder='Minimo 6 caracteres'
                  id= 'formPassword'
                  className= 'formInput'
                  onChange={(event) => {
