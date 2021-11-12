@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Coleccion test of LogIg should render 1`] = `
+exports[`Test LogIn should render 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -32,10 +32,13 @@ Object {
             placeholder="ejemplo@ejemplo.com"
             type="email"
           />
-          <label>
+          <label
+            for="username-password"
+          >
              Contraseña: 
           </label>
           <input
+            id="username-password"
             placeholder="Ingrese su contraseña"
             type="password"
           />
@@ -87,10 +90,13 @@ Object {
           placeholder="ejemplo@ejemplo.com"
           type="email"
         />
-        <label>
+        <label
+          for="username-password"
+        >
            Contraseña: 
         </label>
         <input
+          id="username-password"
           placeholder="Ingrese su contraseña"
           type="password"
         />

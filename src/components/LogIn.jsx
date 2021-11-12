@@ -37,7 +37,7 @@ function LogIn (){
           <div className= 'container'><img src={logo} className="App-logo" alt="logo" /></div>
             <form>
                 <h1 className ='h1Form'>Iniciar sesión</h1>
-                <label for= 'username-mail'> Correo Electrónico: </label>
+                <label htmlFor= 'username-mail'> Correo Electrónico: </label>
                 <input
                  id ='username-mail'
                  type='email'
@@ -46,8 +46,9 @@ function LogIn (){
                  onChange={(event) => {
                     setLoginMail(event.target.value);
                   }}></input>
-                 <label> Contraseña: </label>
+                 <label htmlFor= 'username-password'> Contraseña: </label>
                  <input
+                 id= 'username-password'
                  type='password'
                  placeholder='Ingrese su contraseña'
                  onChange={(event) => {

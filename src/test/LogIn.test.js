@@ -3,25 +3,19 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import LogIn from '../components/LogIn';
 import { MemoryRouter } from 'react-router-dom';
 
-describe('Coleccion test of LogIg', () => {
+describe('Test LogIn', () => {
     test('should render', () => {
       expect(render(<MemoryRouter><LogIn ></LogIn></MemoryRouter>)).toMatchSnapshot();
     }); 
-    /* expect(
-        screen.getByLabelText('Correo Electrónico:')
-        ).toBeInTheDocument(); */
-    // expect(
-    //     screen.getByPlaceholderText('ejemplo@ejemplo.com')
-    //     ).toBeInTheDocument();
-    
-        
-    // expect(screen.getByPlaceholderText('Ingrese su contraseña')).toBeInTheDocument();
-    
-    // test('test call with email and password', () =>{
-
-    // })
+    test("should render the basic fields", () => {
+      render(<MemoryRouter><LogIn /></MemoryRouter>);
+      expect(screen.getByLabelText('Correo Electrónico:')
+      ).toBeInTheDocument();
+      expect(screen.getByLabelText('Contraseña:')
+      ).toBeInTheDocument();
+    })
 })
