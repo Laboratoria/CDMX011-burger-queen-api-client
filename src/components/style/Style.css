@@ -107,7 +107,7 @@ form button {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  margin: 13vmin -2vmax 0 -2vmax;
+  margin: 1vmin -2vmax 0 -2vmax;
   padding-left: 4vmax;
 }
 
@@ -122,7 +122,7 @@ form button {
           flex-flow: column wrap;
 }
 
-.product {
+#listProduct .product {
   padding: 1.5vmin;
   margin: 1.5vmin;
   width: 22vmax;
@@ -134,16 +134,15 @@ form button {
   display: inline-flex;
   background-color: rgba(217, 162, 150, 0.63);
   font-family: 'Spartan', sans-serif;
-  font-style: normal;
-  font-weight: bold;
   font-size: 2vmin;
+  font-weight: bold;
   line-height: 1vmin;
   text-align: center;
   border: none;
   border-radius: 20px;
 }
 
-.product .image {
+#listProduct .product .image {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -161,14 +160,14 @@ form button {
   border-radius: 7px;
 }
 
-.product .image img {
+#listProduct .product .image img {
   padding: 0.2vmin;
   margin: auto;
   width: 6vmax;
   height: 6vmax;
 }
 
-.product .price {
+#listProduct .product .price {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -184,12 +183,69 @@ form button {
           flex-flow: column wrap;
 }
 
-.product .price span {
+#listProduct .product .price span {
   padding: 0.5vmin;
   margin: 0.2vmin;
   width: 100%;
   height: auto;
   line-height: 2.5vmin;
+}
+
+.headerW {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.headerW .logoheader {
+  width: 10vmin;
+}
+
+.headerW .logoheader img {
+  width: 10vmin;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.headerW .btnMenu, .headerW .btnReady {
+  background: none;
+  border: none;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1vmin;
+  margin: 1vmin;
+  width: 11vmin;
+  height: 11vmin;
+}
+
+.headerW .btnMenu img, .headerW .btnReady img {
+  width: 11vmin;
+}
+
+.headerW .btnlogOut {
+  font-family: 'Spartan', sans-serif;
+  font-size: 3vmin;
+  font-weight: bold;
+  padding: 2vmin;
+  margin: 1vmin;
+  width: 11vmin;
+  height: 7vmin;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: rgba(242, 107, 170, 0.81);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 30px;
 }
 
 body {

@@ -9,48 +9,86 @@
     width: $widthValue;
     height: $heigthValue;
 }
+
+@mixin fontStyle ($fontSize, $fontWeight){
+    font-family:'Spartan', sans-serif;
+    font-size: $fontSize;
+    font-weight:$fontWeight;
+}
+
 .menu{
     background-color: #F7E7D0;
     display: flex;
     flex-flow: column wrap;
-    margin: 13vmin -2vmax 0 -2vmax;
+    margin: 1vmin -2vmax 0 -2vmax;
     padding-left: 4vmax;
 }
 #listProduct{
     width: 58%;
     display: flex;
     flex-flow: column wrap;
-}
-.product{
-    @include basic (1.5vmin, 1.5vmin, 22vmax, 10vmax);
-    flex-basis: 10%;
-    display: inline-flex;
-    background-color: rgba(217, 162, 150, 0.63);
-    font-family:'Spartan', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size:2vmin;
-    line-height: 1vmin;
-    text-align: center;
-    border: none;
-    border-radius: 20px;
+    .product{
+        @include basic (1.5vmin, 1.5vmin, 22vmax, 10vmax);
+        flex-basis: 10%;
+        display: inline-flex;        
+        background-color: rgba(217, 162, 150, 0.63);
+        @include fontStyle(2vmin, bold);
+        line-height: 1vmin;
+        text-align: center;
+        border: none;
+        border-radius: 20px;
+        
+        .image{
+            @include flexCenter();
+            @include basic (.3vmin, .5vmin, 7vmax, 7vmax);
+            background-color: rgba(247, 231, 208, 0.4);
+            border-radius: 7px;
+            img{
+                @include basic (.2vmin, auto, 6vmax, 6vmax);
+            }
+        }
+        .price{
+            @include flexCenter();
+            flex-flow: column wrap;
+            span{
+                @include basic (.5vmin, .2vmin, 100%, auto);
+                line-height: 2.5vmin;
+            }
+        }
     
-    .image{
-        @include flexCenter();
-        @include basic (.3vmin, .5vmin, 7vmax, 7vmax);
-        background-color: rgba(247, 231, 208, 0.4);
-        border-radius: 7px;
-        img{
-            @include basic (.2vmin, auto, 6vmax, 6vmax);
-        }
     }
-    .price{
-        @include flexCenter();
-        flex-flow: column wrap;
-        span{
-            @include basic (.5vmin, .2vmin, 100%, auto);
-            line-height: 2.5vmin;
-        }
-    }
-
 }
+
+.headerW{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;    
+    .logoheader{
+        width: 10vmin;
+        img{
+            width: 10vmin;
+            align-self: center;
+        }
+    }
+    .btnMenu, .btnReady{
+        background: none;
+        border: none;
+        @include flexCenter();
+        @include basic (1vmin, 1vmin, 11vmin, 11vmin);
+        img{
+            width: 11vmin;
+        }
+    }
+    .btnlogOut{
+        @include fontStyle(3vmin, bold);
+        @include basic (2vmin, 1vmin, 11vmin, 7vmin);
+        align-self: center;
+        background: rgba(242, 107, 170, 0.81);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border: none;
+        border-radius: 30px;
+    }
+}
+
+
+
