@@ -32,11 +32,14 @@ function Menu (){
     console.log(products)
     return(
         <Fragment>
+            <div className="menu">
             <h1>Pedidos</h1>
-            {
-                products && <GetProducts products= { products }/> 
-            }
+            <div id="listProduct">
+                { products && <GetProducts products= { products }/> }
+            </div>
+            
             <button onClick={logOut}>Cerrar Sesion</button>
+            </div>    
         </Fragment>
     )
 }

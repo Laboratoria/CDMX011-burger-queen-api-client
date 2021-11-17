@@ -1,13 +1,64 @@
-.product{
-    background-color: rgba(217, 162, 150, 0.63);
+@mixin flexCenter (){
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    background-color: #F7E7D0;
+    margin-top: 13vmin;
+    margin-right: -2vmax;
+    margin-left: -2vmax;
+    padding-left: 4vmax;
+    
+}
+#listProduct{
+    width: 60%;
     display: flex;
+    // @include flexCenter();
+    flex-flow: column wrap;
+}
+.product{
+    display: flex;
+    background-color: rgba(217, 162, 150, 0.63);
+    font-family:'Spartan', sans-serif;
+    font-style: normal;
+    // font-variant: small-caps;
+    // fon
+    font-weight: bold;
+    font-size:2vmin;
+    line-height: 1vmin;
+    text-align: center;
+
+    width: 25vmax;
+    height: 10vmax;
+    border: none;
+    padding: 1.5vmin;
+    margin: 1.5vmin;
+    border-radius: 20px;
     
     .image{
+        @include flexCenter();
         background-color: rgba(247, 231, 208, 0.4);
-        width: 5vmin;
-        height: 5vmin;
+        border-radius: 7px;
+        margin: .5vmin;
+        padding: .3vmin;
+        width: 7vmax;
+        height: 7vmax;
         img{
-           width: 80%;
+            padding: .2vmin;
+            width: 6vmax;
+            height: 6vmax;
+        }
+    }
+    .price{
+        @include flexCenter();
+        flex-flow: column wrap;
+        span{
+            width: 100%;
+            line-height: 2.5vmin;
+            padding: .5vmin;
+            margin: .2vmin;
         }
     }
 

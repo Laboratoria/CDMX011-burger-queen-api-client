@@ -1,3 +1,5 @@
+import '../components/style/Style.css';
+
 const GetProducts = ({products}) => {
     return (
         <div className= "products-menu">
@@ -9,9 +11,9 @@ const GetProducts = ({products}) => {
                        <span className = 'image'>
                            <img src= { elem.image } alt = { elem.name }></img>
                         </span>
-                       <span>
+                       <span className = 'price'>
                            <span>{elem.name}</span>
-                           <span>{'$' + elem.price}</span>
+                           <span>{'$ ' + elem.price}</span>
                        </span>
                    </button>
                 ))
