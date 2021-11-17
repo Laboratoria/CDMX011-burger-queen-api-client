@@ -4,8 +4,8 @@ import {
   Routes
 } from "react-router-dom";
 import SignUp from './components/SingUp'
-import LogIn from './components/LogIn/LogIn'
-import Menu from "./components/Menu";
+import LogIn from './pages/LogIn/LogIn'
+import Menu from "./pages/menu/Menu";
 
 function App() {
   return (

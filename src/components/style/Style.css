@@ -21,6 +21,9 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
+  border: 5px solid #6C5A98;
+  background-color: rgba(240, 249, 255, 0.27);
+  border-radius: 50px;
 }
 
 form h1 {
@@ -93,6 +96,23 @@ form button {
 
 .container img {
   width: 100%;
+}
+
+.product {
+  background-color: rgba(217, 162, 150, 0.63);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product .image {
+  background-color: rgba(247, 231, 208, 0.4);
+  width: 5vmin;
+  height: 5vmin;
+}
+
+.product .image img {
+  width: 80%;
 }
 
 body {
