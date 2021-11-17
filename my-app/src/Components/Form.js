@@ -40,7 +40,7 @@ export default function Form() {
           <h2 className="bq_sign">INGRESAR</h2>
           <form className="formStyle" onSubmit={handleSubmit}>
             <br />            
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">USUARIO</label>
             <input
               type="email"
               id="email"
@@ -49,7 +49,7 @@ export default function Form() {
               value={loginEmail}
               onChange={(e) => setLoginEmail(e.target.value)}
             />
-            <label htmlFor="password">Contraseña</label>
+            <label htmlFor="password">CONTRASEÑA</label>
             <input
               type="password"
               id="password"
