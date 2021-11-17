@@ -100,14 +100,19 @@ form button {
 
 .menu {
   background-color: #F7E7D0;
-  margin-top: 13vmin;
-  margin-right: -2vmax;
-  margin-left: -2vmax;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  margin: 13vmin -2vmax 0 -2vmax;
   padding-left: 4vmax;
 }
 
 #listProduct {
-  width: 60%;
+  width: 58%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,9 +123,15 @@ form button {
 }
 
 .product {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  padding: 1.5vmin;
+  margin: 1.5vmin;
+  width: 22vmax;
+  height: 10vmax;
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   background-color: rgba(217, 162, 150, 0.63);
   font-family: 'Spartan', sans-serif;
   font-style: normal;
@@ -128,11 +139,7 @@ form button {
   font-size: 2vmin;
   line-height: 1vmin;
   text-align: center;
-  width: 25vmax;
-  height: 10vmax;
   border: none;
-  padding: 1.5vmin;
-  margin: 1.5vmin;
   border-radius: 20px;
 }
 
@@ -146,16 +153,17 @@ form button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(247, 231, 208, 0.4);
-  border-radius: 7px;
-  margin: .5vmin;
-  padding: .3vmin;
+  padding: 0.3vmin;
+  margin: 0.5vmin;
   width: 7vmax;
   height: 7vmax;
+  background-color: rgba(247, 231, 208, 0.4);
+  border-radius: 7px;
 }
 
 .product .image img {
-  padding: .2vmin;
+  padding: 0.2vmin;
+  margin: auto;
   width: 6vmax;
   height: 6vmax;
 }
@@ -177,10 +185,11 @@ form button {
 }
 
 .product .price span {
+  padding: 0.5vmin;
+  margin: 0.2vmin;
   width: 100%;
+  height: auto;
   line-height: 2.5vmin;
-  padding: .5vmin;
-  margin: .2vmin;
 }
 
 body {
