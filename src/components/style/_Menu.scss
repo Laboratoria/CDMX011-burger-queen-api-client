@@ -9,7 +9,6 @@
     width: $widthValue;
     height: $heigthValue;
 }
-
 @mixin fontStyle ($fontSize, $fontWeight){
     font-family:'Spartan', sans-serif;
     font-size: $fontSize;
@@ -22,9 +21,33 @@
     flex-flow: column wrap;
     margin: 1vmin -2vmax 0 -2vmax;
     padding-left: 4vmax;
+    min-height: 100vmin;
+    max-height: auto;
+    .menuElements{
+        display: flex;
+    }
+    .menuBtns{
+        @include flexCenter();
+        margin: 2vmin;
+        display: flex;
+    }
+    .menuBtn{
+        @include fontStyle(3vmin, bold);
+        @include basic (auto, 1.5vmax, 23vmax, 7.5vmin);
+        text-align: center;
+        background: rgba(255, 226, 101, 0.6);
+        border: 8px solid #FFE265;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+    }
+    .menuBtn:focus{
+        background: rgba(255, 226, 101, 0.9);
+        box-shadow: 0px 6px 4px 3px rgba(0, 0, 0, 0.25)
+    }
 }
 #listProduct{
-    width: 58%;
+    width: 55%;
     display: flex;
     flex-flow: column wrap;
     .product{
@@ -58,17 +81,30 @@
     
     }
 }
+.billMenu{
+    width: 40%;
+    // height: 100%;
+    background: rgba(217, 162, 150, 0.45);
+    border: 8px solid #D9A296;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
 
 .headerW{
     display: inline-flex;
     width: 100%;
     justify-content: space-between;    
     .logoheader{
+        @include flexCenter();
         width: 10vmin;
+        margin-left: 3vmin;
         img{
             width: 10vmin;
             align-self: center;
         }
+    }
+    .btnsHeader{
+        display: inline-flex;
     }
     .btnMenu, .btnReady{
         background: none;

@@ -109,10 +109,56 @@ form button {
           flex-flow: column wrap;
   margin: 1vmin -2vmax 0 -2vmax;
   padding-left: 4vmax;
+  min-height: 100vmin;
+  max-height: auto;
+}
+
+.menu .menuElements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu .menuBtns {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2vmin;
+  display: flex;
+}
+
+.menu .menuBtn {
+  font-family: 'Spartan', sans-serif;
+  font-size: 3vmin;
+  font-weight: bold;
+  padding: auto;
+  margin: 1.5vmax;
+  width: 23vmax;
+  height: 7.5vmin;
+  text-align: center;
+  background: rgba(255, 226, 101, 0.6);
+  border: 8px solid #FFE265;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+}
+
+.menu .menuBtn:focus {
+  background: rgba(255, 226, 101, 0.9);
+  -webkit-box-shadow: 0px 6px 4px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 6px 4px 3px rgba(0, 0, 0, 0.25);
 }
 
 #listProduct {
-  width: 58%;
+  width: 55%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,14 +237,37 @@ form button {
   line-height: 2.5vmin;
 }
 
+.billMenu {
+  width: 40%;
+  background: rgba(217, 162, 150, 0.45);
+  border: 8px solid #D9A296;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 30px;
+}
+
 .headerW {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .headerW .logoheader {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 10vmin;
+  margin-left: 3vmin;
 }
 
 .headerW .logoheader img {
@@ -206,6 +275,12 @@ form button {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.headerW .btnsHeader {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .headerW .btnMenu, .headerW .btnReady {

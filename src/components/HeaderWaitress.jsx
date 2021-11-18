@@ -20,12 +20,14 @@ const HeaderWaitress = () => {
         <Fragment>
             <div className="headerW">
                 <div className= 'logoheader'><img src= {logo} alt= 'logo BurgerQueen'></img></div>
-                <button className='btnMenu'>
-                    <img src="https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/menu_button.png" alt ='btnMenu'></img>
-                </button>
-                <button className='btnReady'>
-                    <img alt='btnReady' src="https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/listo_button.png"></img>
-                </button>
+                <div className="btnsHeader">
+                    <button className='btnMenu'>
+                        <img src="https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/menu_button.png" alt ='btnMenu'></img>
+                    </button>
+                    <button className='btnReady'>
+                        <img alt='btnReady' src="https://raw.githubusercontent.com/DianaAraujoG/La-Magia-de-Mexico/main/img-Burger-Queen/listo_button.png"></img>
+                    </button>
+                </div>
                 <button className='btnlogOut' onClick={logOut}>Salir</button>
             </div>
         </Fragment>        

@@ -3,21 +3,41 @@ import '../components/style/Style.css';
 const GetProducts = ({products}) => {
     return (
         <div className= "products-menu">
-            {(products.map(elem => (
-                   <button 
-                   className= 'product'
-                   key = { elem.id }
-                   >
-                       <span className = 'image'>
-                           <img src= { elem.image } alt = { elem.name }></img>
+            {(products.map((elem) => {
+                if(elem.id !== 8 && elem.id !== 9 && elem.id !== 10 && elem.id !== 11){
+                    return (
+                    <button 
+                    className= 'product'
+                    key = { elem.id }
+                    >
+                        <span className = 'image'>
+                            <img src= { elem.image } alt = { elem.name }></img>
+                         </span>
+                        <span className = 'price'>
+                            <span>{elem.name}</span>
+                            <span>{'$ ' + elem.price}</span>
                         </span>
-                       <span className = 'price'>
-                           <span>{elem.name}</span>
-                           <span>{'$ ' + elem.price}</span>
-                       </span>
-                   </button>
-                ))
-            )}
+                    </button>
+                    )} else {
+                        return (
+                            <div 
+                            className= 'product'                            
+                            >
+                                <span className = 'image'>
+                                    <img src= { elem.image } alt = { elem.name }></img>
+                                 </span>
+                                <span className = 'price'>
+                                    <span>{elem.name}</span>
+                                    <button key = { elem.id } ></button>
+                                    <button ></button>
+                                    <span>{'$ ' + elem.price}</span>
+                                </span>
+                            </div> 
+                        )
+                    }
+            }
+            ))
+            }
         </div>
     )
 }
