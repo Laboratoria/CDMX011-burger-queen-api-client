@@ -281,6 +281,10 @@ form button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  width: 30vmin;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .headerW .btnMenu, .headerW .btnReady {
@@ -302,7 +306,7 @@ form button {
 }
 
 .headerW .btnMenu img, .headerW .btnReady img {
-  width: 11vmin;
+  width: 13.5vmin;
 }
 
 .headerW .btnlogOut {

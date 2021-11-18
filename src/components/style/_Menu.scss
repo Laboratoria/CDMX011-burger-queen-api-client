@@ -105,6 +105,8 @@
     }
     .btnsHeader{
         display: inline-flex;
+        width: 30vmin;
+        justify-content: space-between;
     }
     .btnMenu, .btnReady{
         background: none;
@@ -112,7 +114,7 @@
         @include flexCenter();
         @include basic (1vmin, 1vmin, 11vmin, 11vmin);
         img{
-            width: 11vmin;
+            width: 13.5vmin;
         }
     }
     .btnlogOut{
