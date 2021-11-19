@@ -1,6 +1,6 @@
 import '../components/style/Style.css';
 
-const GetProducts = ({products}) => {
+const GetProducts = ({products, addProduct}) => {
     return (
         <div className= "products-menu">
             {(products.map((elem) => {
@@ -9,6 +9,7 @@ const GetProducts = ({products}) => {
                     <button 
                     className= 'product'
                     key = { elem.id }
+                    onClick = {() => addProduct(elem)}
                     >
                         <span className = 'image'>
                             <img src= { elem.image } alt = { elem.name }></img>

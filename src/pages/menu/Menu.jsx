@@ -5,6 +5,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import '../../components/style/Style.css';
 import GetProducts from "../../components/products";
 import HeaderWaitress from "../../components/HeaderWaitress";
+import OrderData from "../../components/Order";
 
 //import { auth } from '../../FirebaseConfig';
 
@@ -12,6 +13,7 @@ function Menu (){
 
     const [products, setData] = useState(null);    
     const [currentMenu, setcurrentMenu] = useState('desayuno');
+    const [orderProducts, setOrderProducts] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:8000/products')
@@ -26,8 +28,48 @@ function Menu (){
     const menuSelector = () =>{
         return products.filter(data => data.type === currentMenu)
     }
-  
-   
+    
+    const addProduct = (product => {
+        const exist = orderProducts.find((elem) => elem.id === product.id);
+
+        if(exist){
+            setOrderProducts(
+                orderProducts.map((elem) => 
+                    elem.id === product.id ? { ...exist, qty: exist.qty + 1 } : elem
+                )
+            );
+        }else {
+            setOrderProducts(
+                [...orderProducts, { ...product,  qty: 1}]
+            )
+        }
+    })
+    const removeProduct = ( product => {
+        const exist = orderProducts.find((elem) => elem.id === product.id);
+
+        if(exist){
+            setOrderProducts(
+                orderProducts.filter( elem => elem.id !== product.id)
+            )
+        }
+    })
+    const lessProduct = ( product => {
+        const exist = orderProducts.find((elem) => elem.id === product.id);
+        
+        if(exist && exist.qty > 1){
+            setOrderProducts(
+                orderProducts.map((elem) => 
+                    elem.id === product.id ? { ...exist, qty: exist.qty - 1 } : elem
+                )
+            )
+        }
+        if (exist && exist.qty === 1) {
+            setOrderProducts(
+                orderProducts.filter( elem => elem.id !== product.id)
+            )
+          }
+    })
+
     return(
         <Fragment>
             <div className='menuHeader'>
@@ -40,10 +82,10 @@ function Menu (){
             </div>
             <div className="menuElements">
                 <div id="listProduct">
-                    { products && <GetProducts products= { menuSelector() }/> }
+                    { products && <GetProducts products= { menuSelector() } addProduct= { addProduct } /> }
                 </div>
                 <div className="billMenu">
-
+                    { <OrderData orderProducts = {orderProducts} removeProduct = { removeProduct } lessProduct = {lessProduct}></OrderData> }
                 </div>
             </div>
             </div>    

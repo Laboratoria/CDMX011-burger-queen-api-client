@@ -237,15 +237,6 @@ form button {
   line-height: 2.5vmin;
 }
 
-.billMenu {
-  width: 40%;
-  background: rgba(217, 162, 150, 0.45);
-  border: 8px solid #D9A296;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 30px;
-}
-
 .headerW {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
