@@ -33,9 +33,9 @@ function OrderData({orderProducts , removeProduct, lessProduct}) {
                 </select>
             </div>
             <div className= 'orderTitles'>
-                <span>Producto</span>
-                <span>Cant.</span>
-                <span>Precio</span>
+                <h4>Producto</h4>
+                <h4>Cant.</h4>
+                <h4>Precio</h4>
             </div>
             <div className='orderProducts'>
                 {orderProducts.map(elem => (
@@ -56,6 +56,7 @@ function OrderData({orderProducts , removeProduct, lessProduct}) {
                     </div>
                 )) }
             </div>
+            <hr/>
             <div className= 'totalOrder'>
                 <h3>Total</h3>
                 {<h3> ${orderProducts.reduce((previousValue, currentValue) => previousValue + (currentValue.price * currentValue.qty), 0)}</h3>}
