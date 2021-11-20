@@ -1,34 +1,19 @@
-import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "@firebase/auth";
-import { auth } from "../firebase/firebase.Config.js";
 import "../Form.scss";
 import logo from "../img/bq_logo.png";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { login } from "../firebase/loginauth.js";
+
 
 export default function Form() {
- /*  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(""); */
   let navigate = useNavigate();
-
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const login = async () => {
-    try{
-      const user = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      console.log(user);
-    } catch(error){
-      console.log(error.message);
-    }
-  };
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    login(loginEmail, loginPassword);
     navigate("/page1");
+    console.log(loginEmail);
   };
   return (
     <>
@@ -40,11 +25,12 @@ export default function Form() {
           <h2 className="bq_sign">INGRESAR</h2>
           <form className="formStyle" onSubmit={handleSubmit}>
             <br />            
-            <label htmlFor="email">USUARIO</label>
+            <label htmlFor="email" >USUARIO</label>
             <input
               type="email"
               id="email"
               name="email"
+              autoComplete="on"
               placeholder="anvorgesa@gmail.com"
               value={loginEmail}
               onChange={(e) => setLoginEmail(e.target.value)}
@@ -54,11 +40,14 @@ export default function Form() {
               type="password"
               id="password"
               name="password"
+              autoComplete="on"
               placeholder="******"
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
-            />                      
-            <input className="btt-submit" type="submit" value="INGRESAR" onClick={login} />
+            /> 
+            <div className="center-item">                     
+            <button className="btt-submit" type="submit" value="INGRESAR"/>
+            </div>
           </form>
         </div>
       </section>
