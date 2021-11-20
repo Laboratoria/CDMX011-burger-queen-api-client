@@ -1,18 +1,10 @@
-import { BrowserRouter as Router, Route , Routes, useState} from "react-router-dom";
-import { onAuthStateChanged } from "@firebase/auth";
-import { auth } from "./firebase/firebase.Config.js";
+import { BrowserRouter as Router, Route , Routes } from "react-router-dom";
 import Page1 from"./Components/page1" 
 import Form from"./Components/Form"  
 import "./Form.scss"
 
 
 export function App() {
-const [user, setUser]= useState({});
- 
-onAuthStateChanged (auth, (currentUser) => {
-  setUser(currentUser)
- });
-
   return (
     <div className="App">
       <Router>
