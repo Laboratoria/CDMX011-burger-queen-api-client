@@ -6,17 +6,22 @@ import { Login } from "../firebase/loginauth.js";
 
 
 
-export default function Form() {
+export default function LogIn () {
   let navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [error, setError] = useState("");
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    Login(loginEmail, loginPassword);
-    navigate("/page1");
-    console.log(loginEmail);
+    try{
+      await Login(loginEmail, loginPassword);
+      navigate("/home");
+      console.log(loginEmail);
+    }
+    catch(error) {
+      setError("Contraseña o usuario no válido");
+    }       
   };
   return (
     <>
@@ -38,7 +43,7 @@ export default function Form() {
               placeholder="anvorgesa@gmail.com"
               value={loginEmail}
               onChange={(e) => setLoginEmail(e.target.value)}
-            />
+            />            
             <label htmlFor="password">CONTRASEÑA</label>
             <input
               required
@@ -50,6 +55,8 @@ export default function Form() {
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
             /> 
+            {/*<p className="error" >{ error}</p> */}
+            <div className="errorLogin">{error}</div>
             <div className="center-item">                     
             <button className="btt-submit" type="submit" value="INGRESAR"/>
             </div>
