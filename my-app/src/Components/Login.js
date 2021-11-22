@@ -11,11 +11,16 @@ export default function LogIn () {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    Login(loginEmail, loginPassword);
-    navigate("/home");
-    console.log(loginEmail);
+    try{
+      await Login(loginEmail, loginPassword);
+      navigate("/home");
+      console.log(loginEmail);
+    }
+    catch(error) {
+     console.log(error.message)
+    }       
   };
   return (
     <>
