@@ -10,6 +10,7 @@ export default function LogIn () {
   let navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [error, setError] = useState("");
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ export default function LogIn () {
       console.log(loginEmail);
     }
     catch(error) {
-     console.log(error.message)
+      setError("Contraseña o usuario no válido");
     }       
   };
   return (
@@ -42,7 +43,7 @@ export default function LogIn () {
               placeholder="anvorgesa@gmail.com"
               value={loginEmail}
               onChange={(e) => setLoginEmail(e.target.value)}
-            />
+            />            
             <label htmlFor="password">CONTRASEÑA</label>
             <input
               required
@@ -54,6 +55,8 @@ export default function LogIn () {
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
             /> 
+            {/*<p className="error" >{ error}</p> */}
+            <div className="errorLogin">{error}</div>
             <div className="center-item">                     
             <button className="btt-submit" type="submit" value="INGRESAR"/>
             </div>

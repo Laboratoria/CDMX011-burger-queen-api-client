@@ -15,7 +15,7 @@ export default function Home() {
       console.log("saliendo de Burger Queen");
       navigate("/");
     } catch (error) {
-      setError("Server Error");
+      setError("Error");
     }
   };
     return (
