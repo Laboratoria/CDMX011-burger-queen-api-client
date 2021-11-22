@@ -6,16 +6,15 @@ import { Login } from "../firebase/loginauth.js";
 
 
 
-export default function Form() {
+export default function LogIn () {
   let navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   
   const handleSubmit = (e) => {
     e.preventDefault();
-
     Login(loginEmail, loginPassword);
-    navigate("/page1");
+    navigate("/home");
     console.log(loginEmail);
   };
   return (

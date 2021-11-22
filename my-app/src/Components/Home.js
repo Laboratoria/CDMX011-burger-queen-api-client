@@ -4,7 +4,7 @@ import { signOut } from "@firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./CurrentUser";
 
-export default function Page1() {
+export default function Home() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const currentUser = useAuth();
