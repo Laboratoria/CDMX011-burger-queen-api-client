@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route , Routes } from "react-router-dom";
-import Page1 from"./Components/page1" 
+import Page1 from"./Components/Home" 
 import Form from"./Components/Form"  
 import "./Form.scss"
+
 
 
 export function App() {

@@ -2,16 +2,19 @@ import "../Form.scss";
 import logo from "../img/bq_logo.png";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../firebase/loginauth.js";
+import { Login } from "../firebase/loginauth.js";
+
 
 
 export default function Form() {
   let navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(loginEmail, loginPassword);
+
+    Login(loginEmail, loginPassword);
     navigate("/page1");
     console.log(loginEmail);
   };
@@ -27,6 +30,7 @@ export default function Form() {
             <br />            
             <label htmlFor="email" >USUARIO</label>
             <input
+              required
               type="email"
               id="email"
               name="email"
@@ -37,6 +41,7 @@ export default function Form() {
             />
             <label htmlFor="password">CONTRASEÑA</label>
             <input
+              required
               type="password"
               id="password"
               name="password"

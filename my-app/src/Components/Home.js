@@ -12,11 +12,10 @@ export default function Page1() {
   const handlesignOut = async () => {
     try {
       await signOut(auth);
-      console.log("saliendo de app");
+      console.log("saliendo de Burger Queen");
       navigate("/");
     } catch (error) {
       setError("Server Error");
-      
     }
   };
     return (
