@@ -6,6 +6,7 @@ import '../../components/style/Style.css';
 import GetProducts from "../../components/products";
 import HeaderWaitress from "../../components/HeaderWaitress";
 import OrderData from "../../components/Order";
+import SendButton from '../../components/SendButton';
 
 //import { auth } from '../../FirebaseConfig';
 
@@ -84,18 +85,20 @@ function Menu (){
                 <HeaderWaitress></HeaderWaitress>
             </div>
             <div className="menu">
-            <div className="menuBtns">
-                <button className="menuBtn" onClick={() => setcurrentMenu('desayuno') }>Desayuno</button>
-                <button className="menuBtn" onClick={() => setcurrentMenu('almuerzo')}>Almuerzo y Cena</button> 
-            </div>
-            <div className="menuElements">
-                <div id="listProduct">
-                    { products && <GetProducts products= { menuSelector() } addProduct= { addProduct } /> }
+                <div className="menuBtns">
+                    <button className="menuBtn" onClick={() => setcurrentMenu('desayuno') }>Desayuno</button>
+                    <button className="menuBtn" onClick={() => setcurrentMenu('almuerzo')}>Almuerzo y Cena</button> 
                 </div>
-                <div className="billMenu">
-                    { <OrderData orderProducts = { orderProducts } removeProduct = { removeProduct } lessProduct = { lessProduct } handleChange= { handleChange }></OrderData> }
+                <div className="menuElements">
+                    <div id="listProduct">
+                        { products && <GetProducts products= { menuSelector() } addProduct= { addProduct } /> }
+                    </div>
+                        <div className="billMenu">
+                            { <OrderData orderProducts = { orderProducts } removeProduct = { removeProduct } lessProduct = { lessProduct } handleChange= { handleChange }></OrderData> }                        
+                        </div>
+                        <br/>
+                        { <SendButton client = {orderClient.client} table = {orderClient.table} products = {orderProducts}></SendButton>}
                 </div>
-            </div>
             </div>    
         </Fragment>
     )

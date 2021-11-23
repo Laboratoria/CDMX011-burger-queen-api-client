@@ -1,5 +1,5 @@
 import React from 'react';
-import './style/Style.css';;
+import './style/Style.css';
 
 function OrderData({orderProducts , removeProduct, lessProduct, handleChange}) {  
 
@@ -16,6 +16,7 @@ function OrderData({orderProducts , removeProduct, lessProduct, handleChange}) {
                 name = 'client'
                 placeholder='Escribe el nombre del cliente'
                 onChange= {handleChange}
+                required
                 ></input>
                 <label htmlFor= 'tableName'>Mesa: </label>
                 <select 
@@ -23,6 +24,7 @@ function OrderData({orderProducts , removeProduct, lessProduct, handleChange}) {
                 autoComplete= 'off'
                 name= 'table'
                 onChange = {handleChange}
+                required
                 >
                     <option disabled> Selecciona la mesa del cliente</option>
                     <option value= '01'>01</option>
@@ -36,12 +38,12 @@ function OrderData({orderProducts , removeProduct, lessProduct, handleChange}) {
                 </select>
             </div>
             <table className="tableOrder">
+            <tbody>
             <tr className= 'orderTitles'>
                 <th>Producto</th>
                 <th>Cant.</th>
                 <th>Precio</th>
             </tr>
-            <hr/>
                 {orderProducts.map(elem => (
                     <tr key= {elem.id}>
                         <td><button onClick= {() => removeProduct(elem)} className="btnRemove"> 
@@ -60,6 +62,7 @@ function OrderData({orderProducts , removeProduct, lessProduct, handleChange}) {
                         <td className="price">${elem.price * elem.qty}</td>
                     </tr>
                 )) }
+                </tbody>
             </table>
             
             <div className= 'totalOrder'>
@@ -67,7 +70,6 @@ function OrderData({orderProducts , removeProduct, lessProduct, handleChange}) {
                 {<h3> ${orderProducts.reduce((previousValue, currentValue) => previousValue + (currentValue.price * currentValue.qty), 0)}</h3>}
             </div>
         </div>
-        
     )
 }
 
