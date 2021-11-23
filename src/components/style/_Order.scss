@@ -4,15 +4,24 @@
     font-weight:$fontWeight;
     font-style: $fontStyle;
 }
+@mixin btnStyles() {
+    @include fontStyle(2.5vmin,bolder,normal);   
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    border: none;
+    padding: .8vmin;
+}
 
-.billMenu{
-    width: 46%;
+
+.billMenu{    
     // height: 100%;
     background: rgba(217, 162, 150, 0.45);
     border: 8px solid #D9A296;
     box-sizing: border-box;
     border-radius: 30px;
     padding: 1vmin;
+    margin-top: 1.5vmin;
+    margin-bottom: 2vmin;
 }
 
 #OrderData{
@@ -50,21 +59,21 @@
 }
 
 .btnRemove ,.btnLess{
-    width: 2.5vmin;
+    width: 3vmin;
     background: none;
     border: none;
     margin-right: 1vmin;
-    margin-left: 1.5vmin;
     img{
-        width: 2.5vmin;
+        width: 3vmin;
     }
 }
 .tableOrder{
+    width: 95%;
     .orderTitles{
         width: 100%; 
     }
     .price{
-        text-align: end;
+        text-align: end
     }
     hr{
         color: black;
@@ -86,6 +95,23 @@
     border-top: 1px solid #000000;
     h3{
         @include fontStyle(2.5vmin,bolder,black); 
-        margin-right: 5vmin;
+        margin-right: 2vmin;
     }
+}
+.btnSubmitOrder{
+    @include btnStyles();  
+    background: #F2A950;
+}
+.btnCancelOrder{
+    @include btnStyles();  
+    background: #FF598B;
+}
+
+.billElements{
+    width: 46%;
+}
+
+.orderBtns{
+    display: flex;
+    justify-content: space-evenly;
 }

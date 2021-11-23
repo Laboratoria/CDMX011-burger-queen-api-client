@@ -76,9 +76,10 @@ function Menu (){
             const dataValues = { ...orderClient };
             dataValues[event.target.name] = event.target.value;
             console.log(dataValues)
-            return dataValues            
+            return dataValues     
         })
     }
+
     return(
         <Fragment>
             <div className='menuHeader'>
@@ -93,11 +94,15 @@ function Menu (){
                     <div id="listProduct">
                         { products && <GetProducts products= { menuSelector() } addProduct= { addProduct } /> }
                     </div>
+                    <div className='billElements'>
                         <div className="billMenu">
-                            { <OrderData orderProducts = { orderProducts } removeProduct = { removeProduct } lessProduct = { lessProduct } handleChange= { handleChange }></OrderData> }                        
-                        </div>
-                        <br/>
-                        { <SendButton client = {orderClient.client} table = {orderClient.table} products = {orderProducts}></SendButton>}
+                            { <OrderData orderProducts = { orderProducts } removeProduct = { removeProduct } 
+                            lessProduct = { lessProduct } handleChange= { handleChange }></OrderData> }                        
+                         <br/>  
+                         </div>                      
+                        { <SendButton client = {orderClient.client} table = {orderClient.table} products = {orderProducts} 
+                        setProducts= {setOrderProducts} setClient={setOrderClient}></SendButton>}     
+                    </div>                   
                 </div>
             </div>    
         </Fragment>

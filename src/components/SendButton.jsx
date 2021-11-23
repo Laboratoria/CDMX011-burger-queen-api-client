@@ -1,10 +1,12 @@
 import React from 'react';
+import { auth } from '../FirebaseConfig';
+import './style/Style.css';
 
-
-function SendButton ({client,table, products}){
+function SendButton ({client, table, products, setProducts,setClient}){
     
     const saveOrder = () => {
         const order ={
+           'userId' : auth.currentUser.email,                       
             'client': client,
             'table': table,
             'products': products,
@@ -22,16 +24,28 @@ function SendButton ({client,table, products}){
             },
             body: JSON.stringify(order)
         }).then(
-            alert('La orden se envió con éxito a la cocina')
+            alert('La orden se envió con éxito a la cocina'),
+            setProducts([]),
+            setClient({client: '', table: ''})
         )
         }
     } 
+    const cancelOrder = () => {
+        setProducts([]);
+        setClient({client: '', table: ''})
+    }
 
  return (
+    <div className='orderBtns'>
+        <button  className="btnSubmitOrder" onClick={ saveOrder }>
+        Enviar a cocina
+        </button>
+        <button className="btnCancelOrder" onClick={ cancelOrder }>
+            Cancelar
+        </button>
+    </div>
     
-    <button onClick={saveOrder}>
-        Enviar
-    </button>)
+    )
 }
 
 export default SendButton;
