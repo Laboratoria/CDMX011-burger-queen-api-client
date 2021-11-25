@@ -3,6 +3,7 @@ import { auth } from '../firebase/firebase.Config'
 import { signOut } from "@firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./CurrentUser";
+import { Product } from "./product/product";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -25,6 +26,10 @@ export default function Home() {
             <div className="error">{error}</div>
 
             <div>Currently logged in as: { currentUser?.email } </div>
+            <div>
+            <Product></Product>
+            </div>
         </div>
+        
     )
 }

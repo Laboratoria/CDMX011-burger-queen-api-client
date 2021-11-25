@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export class App extends Component {
+export class Product extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -17,7 +17,7 @@ export class App extends Component {
           return (
             <div key={index}>
               <h3>{product.name}</h3>
-              <p>Tags: {product.tags}</p>
+              <p>price: {product.price}</p>
              </div>
           )
         })
