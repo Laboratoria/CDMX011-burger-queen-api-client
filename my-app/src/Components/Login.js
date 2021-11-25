@@ -58,7 +58,7 @@ export default function LogIn () {
             {/*<p className="error" >{ error}</p> */}
             <div className="errorLogin">{error}</div>
             <div className="center-item">                     
-            <button className="btt-submit" type="submit" value="INGRESAR"/>
+            <button className="btt-submit" type="submit" value="INGRESAR">INGRESAR</button>
             </div>
           </form>
         </div>
