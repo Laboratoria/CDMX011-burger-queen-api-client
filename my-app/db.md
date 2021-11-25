@@ -1,4 +1,10 @@
-{ "product": [
+{ "order": {
+  "_id":"",
+  "userId":"",
+  "client":"",
+  "products": {
+    "qty":"", 
+    "product": [
       {
         "_id": "1",
         "name": "Cafe Americano",
@@ -15,6 +21,10 @@
         "type": "Desayuno",
         "dateEntry": ""
       }
-    ]
+    ],
+    "status":"",
+    "dateEntry":"",
+    "dateProcessed": ""
   }
- 
+ }
+}
