@@ -1,6 +1,7 @@
 import React from 'react';
 import { auth } from '../FirebaseConfig';
 import './style/Style.css';
+import Swal from 'sweetalert2'
 
 function SendButton ({client, table, products, setProducts,setClient}){
     
@@ -15,7 +16,7 @@ function SendButton ({client, table, products, setProducts,setClient}){
         }
         
         if(client === '' || table === '' || Object.keys(products).length === 0) {
-            alert('inserta los datos necesarios')
+            Swal.fire('Inserta los datos necesarios')
         } else {
             fetch('http://localhost:8000/orders', {
             method:'POST',
@@ -24,7 +25,7 @@ function SendButton ({client, table, products, setProducts,setClient}){
             },
             body: JSON.stringify(order)
         }).then(
-            alert('La orden se envió con éxito a la cocina'),
+            Swal.fire('La orden se envió con éxito a la cocina'),
             setProducts([]),
             setClient({client: '', table: ''})
         )
