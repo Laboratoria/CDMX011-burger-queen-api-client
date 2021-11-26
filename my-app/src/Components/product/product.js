@@ -9,7 +9,7 @@ export class Product extends Component {
     };
   
     componentDidMount(){
-      let url = "http://localhost:3001/product"
+      let url = "https://my-json-server.typicode.com/iliana00/CDMX011-burger-queen-api-client/product"
       fetch(url)
       .then(resp => resp.json())
       .then(data => {
