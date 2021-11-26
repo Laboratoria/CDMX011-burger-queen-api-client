@@ -84,7 +84,7 @@
         background: rgba(242, 107, 170, 0.81);
     }
     .headerData{
-        margin-bottom: 2vmin;
+        margin: auto 2vmin 2vmin 2vmin;
         div{
             @include fontStyle(2vmin, 600);
             align-self: flex-start;
@@ -99,7 +99,7 @@
     }
     
     .qtyProduct{
-        text-align: end;
+        text-align: center;
     }
     
     th{
