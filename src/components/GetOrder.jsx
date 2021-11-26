@@ -22,16 +22,19 @@ function GetOrders({orders, changeStatus}){
                 <div className='orderCard' key= {elem.id}>
                     <div className='orderHeader'>
                     <h1> Orden N° {elem.id}</h1>
-                    <div> Mesera: <span> {elem.userId}</span> </div>
-                    <div> Cliente: <span> {elem.client}</span> </div>
-                    <div>Mesa: <span> {elem.table}</span></div>
                     </div>
+                    <div className='headerData'>
+                        <div><span> Mesera: </span> {elem.userId} </div>
+                        <div><span> Cliente: </span> {elem.client}</div>
+                        <div><span>Mesa: </span> {elem.table}</div>  
+                    </div>
+                                      
                     <table className="orderTable">
                         <tbody>
-                            <td className= 'orderTitlesTable'>
+                            <tr className= 'orderTitlesTable'>
                                 <th>Producto</th>
                                 <th className="qtyProduct">Cant.</th>
-                            </td>
+                            </tr>
                             {orderProducts}
                         </tbody>
                     </table>
