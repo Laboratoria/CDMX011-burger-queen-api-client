@@ -45,32 +45,65 @@
 .kitchenOrders{
     background-color: #F7E7D0;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: left;
+    overflow-x: auto;
     margin: 1vmin -2vmax 0 -2vmax;
     padding-left: 4vmax;
     padding-right: 3vmax;
-    min-height: 100vmin;
+    min-height: 85vmin;
     max-height: auto;
+    
+}
+
+.allOrders{
+    display: flex;
 }
 
 .orderCard{
+    @include flexCenter();
     @include basic (1vmin, 2vmin, auto, auto);
+    flex-flow: column wrap;
+    min-width: 40vmin;
+    min-height: 65vmin;
     background: rgba(217, 162, 150, 0.45);
     border: 8px solid #D9A296;
     box-sizing: border-box;
     border-radius: 30px;
-
+    
+    .orderHeader{
+        h1{
+            font-family: Roboto;
+            font-style: normal;
+        }
+        div{
+            @include flexCenter();
+            @include fontStyle(2vmin, black);
+        }
+    }
+    .orderTable{
+        width: 95%;
+        .orderTitlesTable{
+            display: flex;
+            width: 100%;
+        }
+    }
+    .qtyProduct{
+        text-align: end;
+    }
     th{
-        @include fontStyle(3vmin, bold);
+        @include fontStyle(3vmin, black);
     }
     td{
-        @include fontStyle(3vmin, normal);
+        @include fontStyle(3vmin, bold);
     }
 }
 
 .btnGetOrder{
+    @include fontStyle(2vmin, bold);
+    @include basic (1vmin, 2vmin, auto, auto);
     background: rgba(255, 226, 101, 0.81);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
+    border: none;
 }
+

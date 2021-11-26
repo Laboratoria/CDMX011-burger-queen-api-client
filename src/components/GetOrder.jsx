@@ -1,3 +1,4 @@
+import React, { Fragment } from 'react';
 import '../components/style/Style.css';
 
 function GetOrders({orders, changeStatus}){
@@ -14,20 +15,22 @@ function GetOrders({orders, changeStatus}){
     // }
 
     return (
-        <div>
+        <Fragment>
             {orders.map((elem) => {
-                const orderProducts = elem.products.map((product) => (<tr key= {product.id}><td>{product.name}</td> <td>{product.qty}</td></tr>))
+                const orderProducts = elem.products.map((product) => (<tr key= {product.id}><td>{product.name}</td> <td className="qtyProduct">{product.qty}</td></tr>))
                 return (
                 <div className='orderCard' key= {elem.id}>
-                    <div className='orderHeader'><h1> Orden N° {elem.id}</h1></div>
-                    <p> Mesera: <span> {elem.userId}</span> </p>
-                    <p> Cliente: <span> {elem.client}</span> </p>
-                    <p> Mesa: <span> {elem.table}</span> </p>
-                    <table>
+                    <div className='orderHeader'>
+                    <h1> Orden N° {elem.id}</h1>
+                    <div> Mesera: <span> {elem.userId}</span> </div>
+                    <div> Cliente: <span> {elem.client}</span> </div>
+                    <div>Mesa: <span> {elem.table}</span></div>
+                    </div>
+                    <table className="orderTable">
                         <tbody>
-                            <td>
+                            <td className= 'orderTitlesTable'>
                                 <th>Producto</th>
-                                <th>Cant.</th>
+                                <th className="qtyProduct">Cant.</th>
                             </td>
                             {orderProducts}
                         </tbody>
@@ -44,7 +47,7 @@ function GetOrders({orders, changeStatus}){
                 </div>
                 )
             })}
-        </div>
+        </Fragment>
     )
 }
 
