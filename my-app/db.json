@@ -4,7 +4,7 @@
         "name": "Cafe Americano",
         "price": "5$",
         "image": "",
-        "type": "Desayuno",
+        "type": "desayuno",
         "dateEntry": ""
       },
       {
@@ -12,7 +12,7 @@
         "name": "Cafe con Leche",
         "price": "5$",
         "image": "",
-        "type": "Desayuno",
+        "type": "desayuno",
         "dateEntry": ""
       },
       {
@@ -20,7 +20,7 @@
         "name": "Sándwich de jamón y queso",
         "price": "10$",
         "image": "",
-        "type": "Desayuno",
+        "type": "desayuno",
         "dateEntry": ""
       },
       {
@@ -28,7 +28,7 @@
         "name": "Jugo de frutas natural",
         "price": "7$",
         "image": "",
-        "type": "Desayuno",
+        "type": "desayuno",
         "dateEntry": ""
       },
       {

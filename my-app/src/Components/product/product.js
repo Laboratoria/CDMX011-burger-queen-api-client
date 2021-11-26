@@ -13,13 +13,15 @@ export class Product extends Component {
       fetch(url)
       .then(resp => resp.json())
       .then(data => {
+
         let posts=data.map((product, index) => {
-          return (
-            <div key={index}>
-              <h3>{product.name}</h3>
-              <p>price: {product.price}</p>
-             </div>
-          )
+            return (
+              <div key={index}>
+                <h3>{product.name}</h3>
+                <p>price: {product.price}</p>
+               </div>
+            )
+                                                    
         })
         this.setState({posts:posts});
       })

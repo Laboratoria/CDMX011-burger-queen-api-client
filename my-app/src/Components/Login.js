@@ -3,20 +3,32 @@ import logo from "../img/bq_logo.png";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Login } from "../firebase/loginauth.js";
-
-
+import { useEffect } from "react";
+import { onAuthStateChanged } from "@firebase/auth";
+import { auth } from "../firebase/firebase.Config";
 
 export default function LogIn () {
   let navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/menu");        
+      } else {
+        navigate("/");
+      }
+    });
+    // eslint-disable-next-line
+  }, []);
   
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
       await Login(loginEmail, loginPassword);
-      navigate("/home");
+      navigate("/menu");
       console.log(loginEmail);
     }
     catch(error) {
