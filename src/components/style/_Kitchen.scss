@@ -42,7 +42,7 @@
     }
 }
 
-.kitchenOrders{
+.kitchenOrders, .waitressOrders{
     background-color: #F7E7D0;
     display: flex;
     justify-content: left;
@@ -54,6 +54,7 @@
     max-height: auto;
     
 }
+
 
 .allOrders{
     display: flex;

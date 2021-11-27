@@ -40,8 +40,7 @@ function GetOrders({orders, changeStatus}){
                     </table>
                     { elem.status === 'pending' ? <button 
                     className="btnGetOrder"
-                    onClick= {() =>{ changeStatus(elem);
-                    window.location.reload()}
+                    onClick= {() =>{ changeStatus(elem)}
                     } >Orden Lista</button> : <button 
                     className="btnGetOrder"
                     onClick= {() =>{ changeStatus(elem);

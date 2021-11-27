@@ -540,7 +540,7 @@ form button {
   border-radius: 30px;
 }
 
-.kitchenOrders {
+.kitchenOrders, .waitressOrders {
   background-color: #F7E7D0;
   display: -webkit-box;
   display: -ms-flexbox;
