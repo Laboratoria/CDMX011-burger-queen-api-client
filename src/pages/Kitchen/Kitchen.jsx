@@ -10,7 +10,7 @@ function Kitchen(){
     
     
     const ordersList = () => {
-        fetch('http://localhost:8000/orders')
+        fetch('https://burger-queen-fake-server-app.herokuapp.com/orders')
             .then(res => {
                 return res.json();
             })
@@ -30,7 +30,7 @@ function Kitchen(){
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify( { ...order, "status": 'delivering', "deliveringTime":new Date()} )
         };
-        fetch('http://localhost:8000/orders/' + order.id, requestOptions)
+        fetch('https://burger-queen-fake-server-app.herokuapp.com/orders/' + order.id, requestOptions)
             .then(response => response.json())
             .then(() => ordersList())
             .then(() => {
