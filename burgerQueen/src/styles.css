@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+html, body{
+    height: 100%;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.txt{
+  color:#102442b2;
+  font-size: large;
+}
+.borders{
+  border: 2px solid #15325fb2;
+}
